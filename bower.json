@@ -1,0 +1,28 @@
+{
+  "name": "js-vertical-slideshow",
+  "version": "0.0.0",
+  "authors": [
+    "Lee Goddard <lee@leegoddard.net>"
+  ],
+  "description": "Smoothly scroll to the next element when the user scrolls the page vertically",
+  "main": "js/VerticalSlideShow.js",
+  "moduleType": [
+    "amd",
+    "es6"
+  ],
+  "keywords": [
+    "slideshow",
+    "scroll"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.16"
+  }
+}
