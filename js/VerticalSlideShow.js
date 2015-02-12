@@ -10,7 +10,7 @@
     });
     </script>
 **/
-define( function () {
+define( ['jQuery'], function (jQuery) {
     var VerticalSlideShow = function (args) {
         this.container = jQuery(args.container);
         this.container.css({
