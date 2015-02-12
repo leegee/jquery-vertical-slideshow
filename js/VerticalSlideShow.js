@@ -53,8 +53,6 @@ define( ['jQuery'], function (jQuery) {
         this.direction = this.viewTop >= this.lastViewTop? 1 : -1;
         this.currentIndex += this.direction;
 
-        console.log(this.direction)
-
         if (this.currentIndex >= 0 && this.currentIndex < this.els.length){
             // this.els[ this.currentIndex ][0].scrollIntoView();
             var self = this;
