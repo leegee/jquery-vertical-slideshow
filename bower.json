@@ -7,8 +7,7 @@
   "description": "Smoothly scroll to the next element when the user scrolls the page vertically",
   "main": "js/VerticalSlideShow.js",
   "moduleType": [
-    "amd",
-    "es6"
+    "amd"
   ],
   "keywords": [
     "slideshow",
@@ -24,5 +23,6 @@
   ],
   "devDependencies": {
     "requirejs": "~2.1.16"
-  }
+  },
+  "homepage": "https://github.com/leegee/jquery-vertical-slideshow"
 }
