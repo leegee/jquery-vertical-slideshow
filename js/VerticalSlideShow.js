@@ -1,27 +1,29 @@
 /** Vertically scrolling slide show, cf Valentino
-    <script src='js/VerticalSlideShow.js'></script>
-    <script>
-        jQuery(document).ready( function () {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
-        new VerticalSlideShow({
-            container: '#container',
-            selector: 'img'
-        });
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    new require('VerticalSlideShow')({
+        container: '#container', // leave blank for window
+        selector: 'img'
     });
-    </script>
 **/
 define( ['jQuery'], function (jQuery) {
     var VerticalSlideShow = function (args) {
-        this.container = jQuery(args.container);
+        if (typeof args.container === 'undefined'){
+            this.isWindow = true;
+            args.container = 'body'
+            this.container = jQuery( 'body' );
+        } else {
+            this.container = jQuery(args.container);
+        }
         this.container.css({
             overflow: 'auto',
             position: 'relative',
             width: '100%',
             height: '100%'
         });
+
         this.selector = args.selector || 'img';
 
-        this.els = jQuery( args.container + ' '+ this.selector );
+        this.els = jQuery( args.container + ' ' + this.selector );
         for (var i=0; i<this.els.length; i++){
             this.els[i] = jQuery( this.els[i] );
         }
@@ -34,11 +36,9 @@ define( ['jQuery'], function (jQuery) {
         this.ready = true;
 
         var self = this;
-        this.container.on('scroll', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+        var o = this.isWindow? jQuery(window) : this.container;
+        o.on('scroll', function (e) {
             self.scrollContainer();
-            return false;
         } );
     };
 
@@ -46,21 +46,22 @@ define( ['jQuery'], function (jQuery) {
         if (this.ready == false){
             return;
         }
-        this.ready = false;
 
+        this.ready = false;
         this.viewTop = this.container.scrollTop();
         this.viewBottom = this.viewTop + jQuery(window).height();
         this.direction = this.viewTop >= this.lastViewTop? 1 : -1;
         this.currentIndex += this.direction;
 
         if (this.currentIndex >= 0 && this.currentIndex < this.els.length){
-            // this.els[ this.currentIndex ][0].scrollIntoView();
             var self = this;
             self.container.animate(
                 {
                     scrollTop: self.els[self.currentIndex].offset().top
+                        + (self.isWindow?
+                            0 : self.container.scrollTop()
+                        )
                         // - self.container.offset().top
-                        + this.container.scrollTop()
                 },
                 self.scrollDuration,
                 function () {
