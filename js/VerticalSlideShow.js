@@ -16,9 +16,7 @@ define( ['jQuery'], function (jQuery) {
         }
         this.container.css({
             overflow: 'auto',
-            position: 'relative',
-            width: '100%',
-            height: '100%'
+            position: 'relative'
         });
 
         this.selector = args.selector || 'img';
