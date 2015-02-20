@@ -17,7 +17,7 @@ requirejs(
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         new VerticalSlideShow({
             selector: 'img'
-        });
+        }).start();
     });
 });
 

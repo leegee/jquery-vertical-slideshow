@@ -18,7 +18,7 @@ requirejs(
         new VerticalSlideShow({
             container: '#container',
             selector: 'img'
-        });
+        }).start();
     });
 });
 

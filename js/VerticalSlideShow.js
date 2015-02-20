@@ -32,8 +32,6 @@ define( ['jQuery'], function (jQuery) {
         this.currentIndex = 0;
         this.lastViewTop = -1;
         this.ready = true;
-
-        this.start();
     };
 
     VerticalSlideShow.prototype.start = function () {
