@@ -9,8 +9,8 @@ define( ['jQuery'], function (jQuery) {
     var VerticalSlideShow = function (args) {
         if (typeof args.container === 'undefined'){
             this.isWindow = true;
-            args.container = 'html,body'
-            this.container = jQuery( 'html,body' );
+            args.container = 'html'
+            this.container = jQuery( 'html' );
         } else {
             this.container = jQuery(args.container);
         }
