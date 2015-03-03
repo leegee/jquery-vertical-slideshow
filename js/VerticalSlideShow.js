@@ -20,6 +20,7 @@ define( ['jQuery'], function (jQuery) {
         });
 
         this.selector = args.selector || 'img';
+        this.offset = args.offset || 0;
 
         this.els = jQuery( args.container + ' ' + this.selector );
         for (var i=0; i<this.els.length; i++){
@@ -65,6 +66,7 @@ define( ['jQuery'], function (jQuery) {
                     scrollTop: self.els[self.currentIndex].offset().top
                         + (self.isWindow?
                             0 : self.container.scrollTop()
+                        + self..offset
                         )
                         // - self.container.offset().top
                 },
