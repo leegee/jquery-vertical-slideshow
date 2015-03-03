@@ -66,7 +66,7 @@ define( ['jQuery'], function (jQuery) {
                     scrollTop: self.els[self.currentIndex].offset().top
                         + (self.isWindow?
                             0 : self.container.scrollTop()
-                        + self..offset
+                        + self.offset
                         )
                         // - self.container.offset().top
                 },
