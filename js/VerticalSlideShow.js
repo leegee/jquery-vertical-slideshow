@@ -38,14 +38,14 @@ define( ['jQuery'], function (jQuery) {
     VerticalSlideShow.prototype.start = function () {
         var self = this;
         var o = this.isWindow? jQuery(window) : this.container;
-        o.on('scroll.VerticalSlideShow', function (e) {
+        o.on('scroll.VerticalSlideShow touchmove.VerticalSlideShow', function (e) {
             self.scrollContainer();
         } );
     };
 
     VerticalSlideShow.prototype.stop = function () {
         var o = this.isWindow? jQuery(window) : this.container;
-        o.off('scroll.VerticalSlideShow');
+        o.off('scroll.VerticalSlideShow touchmove.VerticalSlideShow');
     };
 
     VerticalSlideShow.prototype.scrollContainer = function() {
