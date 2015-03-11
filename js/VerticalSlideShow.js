@@ -59,7 +59,7 @@ define( ['jQuery'], function (jQuery) {
         this.direction = this.viewTop >= this.lastViewTop? 1 : -1;
         this.currentIndex += this.direction;
 
-        if (this.currentIndex >= 0 && this.currentIndex < this.els.length){
+        if (this.currentIndex >= 0 && this.currentIndex < this.els.length-1){
             var self = this;
             self.container.animate(
                 {
