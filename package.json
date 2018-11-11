@@ -1,0 +1,19 @@
+{
+  "name": "jquery-vertical-slideshow",
+  "version": "0.0.1",
+  "description": "-",
+  "main": "js/VerticalSlideshow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegee/jquery-vertical-slideshow.git"
+  },
+  "author": "lee goddard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leegee/jquery-vertical-slideshow/issues"
+  },
+  "homepage": "https://github.com/leegee/jquery-vertical-slideshow#readme"
+}
